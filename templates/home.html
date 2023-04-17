@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    {%include 'bootstrap.html' %}
-    <style>
-  #anupam {
-  height: 350px;
-  width: 600px;
-  object-fit: cover;
-  margin: 0 auto 16px;
-  display: block;
-}
-    #german {
-      text-align : center;
-    }
+  <div class="container-fluid">
+    <head>
+      {% include 'bootstrap.html' %}
+      <style>
+        #anupam {
+          height: 350px;
+          max-width: 100%;
+          object-fit: cover;
+          margin: 0 auto 16px;
+          display: block;
+        }
 
-  
-</style>
-  </head>
+        #german {
+          text-align: center;
+        }
+      </style>
+    </head>
+  </div>
+
   <body>
     <div>
-      <h2 style="text-align : center">
-      My Portfolio
-    </h2>
+      <h2 style="text-align: center">
+        My Portfolio
+      </h2>
     </div>
+
     <div>
-      <img src="/static/nature.jpg" alt="Nature" class="center", id="anupam">
+      <img src="/static/nature.jpg" alt="Nature" id="anupam">
     </div>
-    <p id="german">
-      <h4 style="text-align:center">
+
+    <div id="german">
+      <h4 style="text-align: center">
         About
       </h4>
-      <p>
-        Hi , I am Arindam Mukherjee, an Embedded Software Enginner, currently working with a R&D team at Skilancer Solar.
+      <p style="text-align: center">
+        <b>
+          Hi, I am Arindam Mukherjee, an Embedded Software Engineer, currently working with the R&amp;D team at Skilancer Solar.
+        </b>
       </p>
-    </p>
+    </div>
+
+    {% for project in projects %}
+      {% include 'project_list.html' %}
+    {% endfor %}
+
+
   </body>
 </html>
-
-
