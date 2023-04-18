@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,jsonify
 
 Projects=[
   {
@@ -22,6 +22,9 @@ app = Flask(__name__) # creat an object
 @app.route("/")  # route the app
 def home_page():
     return render_template("home.html",projects=Projects)
+@app.route("/api/projects")
+def show_json():
+  return jsonify(Projects)
 
 # @app.route("/projects"):
 # def projects():
