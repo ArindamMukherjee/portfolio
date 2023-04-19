@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <div class="container-fluid">
-    <head>
-      {% include 'bootstrap.html' %}
-      <style>
-        #anupam {
-          height: 350px;
-          max-width: 100%;
-          object-fit: cover;
-          margin: 0 auto 16px;
-          display: block;
-        }
+  <head>
+    {% include 'bootstrap.html' %}
+    <style>
+      #anupam {
+        height: 350px;
+        max-width: 100%;
+        object-fit: cover;
+        margin: 0 auto 16px;
+        display: block;
+      }
 
-        #german {
-          text-align: center;
-        }
-      </style>
-    </head>
-  </div>
+      #german {
+        text-align: justify;
+      }
+
+      #german b {
+        display: block;
+        margin: 0 auto;
+        max-width: 700px;
+      }
+    </style>
+  </head>
 
   <body>
     {% include 'header.html' %}
@@ -35,18 +39,20 @@
       <h4 style="text-align: center">
         About
       </h4>
-      <p style="text-align: center">
+      <p>
         <b>
-          Hi, I am Arindam Mukherjee, an Embedded Software Engineer, currently working with the R&amp;D team at Skilancer Solar.
+          Hi, I am Arindam Mukherjee, an Embedded Software Engineer, currently working with the R&D team at Skilancer Solar. As a tech-enthusiast, I possess a firm conviction in the power of technology to uplift humanity. My unbridled ambition as a B.Tech (MECH) student is to make significant contributions in the areas of electric vehicles, drones, mechatronics, and beyond, equipped with a range of essential skills and attributes. I am equally fascinated by the transformative potential of Artificial Intelligence and aspire to leverage both core skills and coding abilities in automating processes, where the Internet of Things (IoT) is set to revolutionize the technological landscape. My interests and aspirations are driven by a deep passion for innovation and a steadfast commitment to advancing society through technology.
         </b>
       </p>
     </div>
-    <div>
-      <h4 style="text-align:center"> Projects </h4>
+
+    <div >
+      <h2 style="text-align:center"> Projects </h2>
       {% for project in projects %}
         {% include 'project_list.html' %}
       {% endfor %}
     </div>
+
     {% include 'footer2.html' %}
   </body>
 </html>

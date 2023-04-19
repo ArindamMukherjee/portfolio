@@ -3,17 +3,17 @@ from flask import Flask, render_template,jsonify
 Projects=[
   {
      'id': 1,
-     'title' : "Autonomious Drone",
+     'title' : "Real-time Object Detection System using OpenCV and COCO Dataset",
   },
 
   {
      'id': 2,
-     'title' : "Obstacle avoider using Ultrasonic Sensor",
+     'title' : "Intelligent Robotic Navigation System using IR Sensor and NTP Time Synchronization",
   },
 
   {
      'id': 3,
-     'title' : "VRV",
+     'title' : "Intelligent Power Monitoring System with Current Sensor and Relay Control",
   }
 ]
 
