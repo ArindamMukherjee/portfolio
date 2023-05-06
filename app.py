@@ -17,6 +17,7 @@ skills = [
 
 @app.route("/skills")
 def show_skills():
+  # skills  = load_skills_from_db()
   return render_template("skills.html", skills = skills)
 
 
