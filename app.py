@@ -1,33 +1,38 @@
-from flask import Flask, render_template,jsonify
+# app.py
+import pymysql
+from flask import Flask, render_template, jsonify
+from database1 import load_data_from_db
 
-Projects=[
-  {
-     'id': 1,
-     'title' : "Real-time Object Detection System using OpenCV and COCO Dataset",
-  },
+app = Flask(__name__)
 
-  {
-     'id': 2,
-     'title' : "Intelligent Robotic Navigation System using IR Sensor and NTP Time Synchronization",
-  },
-
-  {
-     'id': 3,
-     'title' : "Intelligent Power Monitoring System with Current Sensor and Relay Control",
-  }
+skills = [
+    {'id': 1, 'name': 'Python'},
+    {'id': 2, 'name': 'Java'},
+    {'id': 3, 'name': 'JavaScript'},
+    {'id': 4, 'name': 'C++'},
+    {'id': 5, 'name': 'HTML'},
+    {'id': 6, 'name': 'CSS'}
 ]
 
-app = Flask(__name__) # creat an object 
 
-@app.route("/")  # route the app
+@app.route("/skills")
+def show_skills():
+  return render_template("skills.html", skills = skills)
+
+
+@app.route("/")
 def home_page():
-    return render_template("home.html",projects=Projects)
+    data = load_data_from_db()
+    return render_template("home.html", projects=data)
+
+
 @app.route("/api/projects")
 def show_json():
-  return jsonify(Projects)
+    data = load_data_from_db()
+    return jsonify(data)
 
-# @app.route("/projects"):
-# def projects():
-#   return 
-if __name__ =="__main__":
-  app.run(host = "0.0.0.0",port = "5000", debug = True) # 
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port="5000", debug=True)
+
+

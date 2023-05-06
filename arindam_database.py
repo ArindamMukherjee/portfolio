@@ -1,6 +1,4 @@
 import pymysql
-
-# Establishing a connection to the database
 connection = pymysql.connect(
     host='hanuman.chwhvj7eb3bv.us-east-1.rds.amazonaws.com',
     user='admin',
@@ -39,6 +37,6 @@ def load_data_from_db():
 
     return data
 
-# Closing the cursor and connection
-cursor.close()
-connection.close()
+    cursor.close()
+    connection.close()
+    
